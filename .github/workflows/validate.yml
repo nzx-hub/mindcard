@@ -1,0 +1,33 @@
+name: validate-decks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "decks/**"
+      - "app/decks.js"
+      - "tools/**"
+      - "schemas/**"
+      - ".github/workflows/validate.yml"
+  pull_request:
+    paths:
+      - "decks/**"
+      - "app/decks.js"
+      - "tools/**"
+      - "schemas/**"
+      - ".github/workflows/validate.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate deck JSON
+        run: python tools/validate_deck.py "decks/*.json"
+      - name: Check bundled decks are up to date
+        run: |
+          python tools/build_app_decks.py
+          git diff --exit-code app/decks.js

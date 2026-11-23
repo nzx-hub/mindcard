@@ -1,0 +1,38 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+
+# Tauri
+src-tauri/target/
+src-tauri/gen/
+
+# Build outputs / binaries (keep source repo clean)
+*.exe
+*.dll
+*.msi
+*.pdb
+*.zip
+
+# Local test artifacts
+_test-*.json
+*.log
+.env
+.env.*
+
+# OS temp
+~$*
+
+# Local-only content (course deck, exported progress)
+private/

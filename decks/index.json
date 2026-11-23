@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "decks": [
+    {
+      "id": "example-study-notes",
+      "title": "间隔重复学习法",
+      "subtitle": "示例卡组 · 由 Markdown 转换",
+      "file": "example-study-notes.json",
+      "language": "zh-CN",
+      "chapters": 2,
+      "cards": 13,
+      "tags": [
+        "学习方法",
+        "间隔重复"
+      ],
+      "license": "CC-BY-4.0"
+    }
+  ]
+}
